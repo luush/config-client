@@ -1,0 +1,18 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: test
+      uri: http://localhost:8089/
+  profiles:
+    active: test
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8083/eureka/
